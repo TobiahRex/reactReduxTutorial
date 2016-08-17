@@ -7,31 +7,29 @@ const authors = [
   {
     id: 'cory-house',
     firstName: 'Cory',
-    lastName: 'House'
+    lastName: 'House',
   },
   {
     id: 'scott-allen',
     firstName: 'Scott',
-    lastName: 'Allen'
+    lastName: 'Allen',
   },
   {
     id: 'dan-wahlin',
     firstName: 'Dan',
-    lastName: 'Wahlin'
-  }
+    lastName: 'Wahlin',
+  },
 ];
 
-//This would be performed on the server in a real app. Just stubbing in.
-const generateId = (author) => {
+
+function generateId(author) {
   return author.firstName.toLowerCase() + '-' + author.lastName.toLowerCase();
-};
+}
 
 class AuthorApi {
   static getAllAuthors() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Object.assign([], authors));
-      }, delay);
+      setTimeout(() => resolve(Object.assign([], authors)), delay);
     });
   }
 
