@@ -10,7 +10,7 @@ class ManageCoursePage extends React.Component {
 
     this.state = {
       course: Object.assign({}, this.props.course),
-      error: {},
+      errors: {},
     };
   }
 
@@ -20,15 +20,16 @@ class ManageCoursePage extends React.Component {
         <h1>Manage Course</h1>
         <CourseForm
           allAuthors={[]}
+          course={this.state.course}
           errors={this.state.errors}
-          course={this.state.course} />
+        />
       </div>
     );
   }
 }
 
 ManageCoursePage.PropTypes = {
-  course: PropTypes.string.isRequired,
+  course: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state, ownProps) {
@@ -36,7 +37,7 @@ function mapStateToProps(state, ownProps) {
   return { course };
 }
 
-function mapDispatchToProps(courseActions, dispatch) {
+function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(courseActions, dispatch) };
 }
 

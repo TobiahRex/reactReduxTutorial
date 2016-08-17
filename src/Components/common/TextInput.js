@@ -27,7 +27,7 @@ function TextInput({ name, label, onChange, placeholder, value, error }) {
 TextInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  onChange: PropTypes.function.isRequired,
+  onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   error: PropTypes.string,
