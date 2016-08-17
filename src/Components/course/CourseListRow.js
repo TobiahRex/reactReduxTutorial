@@ -6,9 +6,9 @@ function CourseListRow({ course }) {
     <tr>
       <td><a href={course.watchHref}>Watch</a></td>
       <td><a href={course.watchHref}>{course.title}</a></td>
-      <td><a href={course.watchHref}>{course.authorId}</a></td>
-      <td><a href={course.watchHref}>{course.category}</a></td>
-      <td><a href={course.watchHref}>{course.length}</a></td>
+      <td>{course.authorId}</td>
+      <td>{course.category}</td>
+      <td>{course.length}</td>
     </tr>
   );
 }

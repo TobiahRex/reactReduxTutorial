@@ -14,14 +14,15 @@ function CourseList({ courses }) {
         </tr>
       </thead>
       <tbody>
-        {courses.map(course => <CourseListRow key={course.id} course={course} />)}
+        {courses.map(course => <CourseListRow
+          key={course.id}
+          course={course}
+          />)}
       </tbody>
     </table>
   );
 }
 
-CourseList.propTypes = {
-  courses: PropTypes.array.isRequired,
-};
+CourseList.propTypes = { courses: PropTypes.array.isRequired };
 
 export default CourseList;
