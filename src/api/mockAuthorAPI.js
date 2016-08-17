@@ -34,7 +34,8 @@ class AuthorApi {
   }
 
   static saveAuthor(author) {
-    author = Object.assign({}, author); // to avoid manipulating object passed in.
+    let _author = author;
+    _author = Object.assign({}, author);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
@@ -49,13 +50,13 @@ class AuthorApi {
 
         if (author.id) {
           const existingAuthorIndex = authors.findIndex(a => a.id == author.id);
-          authors.splice(existingAuthorIndex, 1, author);
+          authors.splice(existingAuthorIndex, 1, _author);
         } else {
           //Just simulating creation here.
           //The server would generate ids for new authors in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
-          author.id = generateId(author);
-          authors.push(author);
+          author.id = generateId(_author);
+          authors.push(_author);
         }
 
         resolve(author);
